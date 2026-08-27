@@ -1,0 +1,17 @@
+{
+  "name": "auto-resume-filler",
+  "version": "0.3.0",
+  "description": "A privacy-conscious Chromium extension for structured resume autofill with optional AI-assisted field planning.",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/smoke-test.js",
+    "check": "node --check ai-project-optimizer.js && node --check content-scripts/ai-structure.js && node --check content-scripts/autofill.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
