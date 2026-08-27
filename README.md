@@ -1,2 +1,60 @@
-# auto-resume-filler
-A browser automation tool for automatically filling online resume and job application forms.
+# Auto Resume Filler
+
+一个面向校招 / 社招网申场景的 Chromium 浏览器扩展。它将结构化简历数据保存在浏览器本地，在招聘网站页面识别可填写字段，并提供自动匹配、人工确认填写和可选的 AI 辅助内容规划。
+
+> 开源版本不包含真实简历、联系方式、账号信息或 API Key；示例数据应使用虚构信息。
+
+## 主要功能
+
+- 结构化管理教育、工作、项目、获奖、证书、专利和技能等简历信息。
+- 扫描当前页面可见、可编辑字段，识别栏目、重复记录和字段语义。
+- 本地规则优先完成高置信度字段匹配与填写。
+- 可选接入 DeepSeek API，对整页表单进行结构理解和内容规划。
+- AI 结果逐字段预览、编辑、勾选，确认后才写入网页。
+- 对身份证、手机号、邮箱、住址、密码、验证码、Token/API Key 等敏感信息进行过滤。
+- 不自动点击验证码、隐私协议或最终提交按钮。
+- 支持导出填写规划 JSON，便于检查和复盘。
+
+## 安装
+
+1. 下载仓库的完整扩展文件。
+2. 打开 `edge://extensions` 或 `chrome://extensions`。
+3. 开启“开发人员模式”。
+4. 点击“加载解压缩的扩展程序”。
+5. 选择扩展根目录。
+
+## 使用
+
+1. 在“简历信息管理”中手动录入或导入结构化简历 JSON。
+2. 打开招聘网站的简历/申请表单页面。
+3. 使用侧边栏扫描页面并检查字段匹配结果。
+4. 如需 AI 辅助，在设置中填写自己的 DeepSeek API Key。
+5. 对生成内容逐字段核对；只有确认后的字段才写入网页。
+6. 最终保存或提交仍由用户本人完成。
+
+## 隐私与安全
+
+- 简历数据通过 `chrome.storage.local` 保存在浏览器本地。
+- API Key 也保存在扩展本地存储中；界面掩码不等于加密。
+- AI 规划器会过滤常见个人敏感字段和值，但自动过滤不能替代人工复核。
+- 扩展具有较广泛的招聘网页表单读取能力，只应在可信网站使用。
+- 项目不设计为绕过验证码、风控、访问控制或自动批量提交申请。
+
+详细说明见 `PRIVACY.md` 和 `SECURITY.md`。
+
+## 技术栈
+
+- Chromium Extension Manifest V3
+- JavaScript
+- Browser DOM Automation
+- `chrome.storage.local`
+- DeepSeek API（可选）
+- Playwright（冒烟测试）
+
+## 开发建议
+
+当前版本来源于可直接加载的浏览器扩展构建产物，其中部分 UI JavaScript 为压缩后的 bundle。继续维护时建议逐步恢复为完整的 `src/` + 构建流程，以便代码审查、贡献和测试。
+
+## License
+
+MIT License。
