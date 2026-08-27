@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "profile": {
+    "name_zh": {"value": "张三", "status": "example", "source": "example", "note": null}
+  },
+  "job_preferences": {
+    "target_roles": {"value": "软件开发工程师", "status": "example", "source": "example", "note": null},
+    "preferred_cities": {"value": "上海、北京", "status": "example", "source": "example", "note": null}
+  },
+  "education": [
+    {
+      "school": "示例大学",
+      "major": "计算机科学与技术",
+      "degree_level": "硕士",
+      "start_date": "2024.09",
+      "end_date": "2027.06",
+      "gpa": "3.7/4.0",
+      "description": "示例数据，请替换为你自己的经历。"
+    }
+  ],
+  "projects": [
+    {
+      "name": "智能表单自动化系统",
+      "role": "项目负责人",
+      "start_date": "2025.01",
+      "end_date": "2025.06",
+      "description": "识别网页表单结构，根据结构化简历数据生成填写计划。",
+      "results": "完成浏览器扩展原型与自动化测试。",
+      "technologies": "JavaScript, Chrome Extension MV3, Playwright"
+    }
+  ],
+  "skills": {
+    "software": "JavaScript, Git, Browser Automation",
+    "ai_data": "LLM API, structured output"
+  }
+}
